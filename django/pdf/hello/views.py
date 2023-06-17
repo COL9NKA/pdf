@@ -15,4 +15,11 @@ def about(request,name,age,cute,beauty):
     """)
     
 def contact(request):
-    return HttpResponse("<h2>Таня - 8 888 555 35 35</h2>")
+    host = request.META["HTTP_HOST"] # получаем адрес сервера
+    user_agent = request.META["HTTP_USER_AGENT"]    # получаем данные бразера
+    path = request.path     # получаем запрошенный путь
+    return HttpResponse(f"""<h2>Таня - 8 888 555 35 35</h2>
+        <p>Host: {host}</p>
+        <p>Path: {path}</p>
+        <p>User-agent: {user_agent}</p>
+    """)
