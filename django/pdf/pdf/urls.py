@@ -19,4 +19,6 @@ from hello import views
 
 urlpatterns = [
     path('', views.index, name='home'),
+    path('about', views.about, kwargs={"name":"tanya", "age": 18, "cute": f"12/10","beauty": f"10/10"}, name="abouut"),
+    path('contact', views.contact)
 ]
